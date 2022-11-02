@@ -2,6 +2,9 @@ CC = g++
 
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
+# building with PGO
+CFLAGS_DEFINES=-DSEED=923 -DUPDATE_LIMIT=3000
+
 # CPPFLAGS_PART-THAT-SHOULD-BE-FAST := $(CFLAGS_DEFINES) -m64 -Wall -std=c++11 -ffp-model=fast -fno-exceptions -fno-threadsafe-statics
 CPPFLAGS_PART-THAT-SHOULD-BE-FAST := $(CFLAGS_DEFINES) -m64 -Wall -std=c++11 -fno-exceptions -fno-threadsafe-statics
 

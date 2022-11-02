@@ -1,8 +1,9 @@
-CC = clang++-12
+CC = g++
 
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
-CPPFLAGS_PART-THAT-SHOULD-BE-FAST := $(CFLAGS_DEFINES) -m64 -Wall -std=c++11 -ffp-model=fast -fno-exceptions -fno-threadsafe-statics 
+# CPPFLAGS_PART-THAT-SHOULD-BE-FAST := $(CFLAGS_DEFINES) -m64 -Wall -std=c++11 -ffp-model=fast -fno-exceptions -fno-threadsafe-statics
+CPPFLAGS_PART-THAT-SHOULD-BE-FAST := $(CFLAGS_DEFINES) -m64 -Wall -std=c++11 -fno-exceptions -fno-threadsafe-statics
 
 ifdef COREI7
 $(info COREI7 defined)
